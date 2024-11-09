@@ -1,23 +1,25 @@
 # Definición de variables
 CC = gcc
 CFLAGS = -Wall -g
+OBJ_DIR = Objetos
+
+# Archivos fuente
+SRC = CityDefender.c Cartas.c Tablero.c
+
+# Archivos objeto (en el directorio Objetos)
+OBJ = $(SRC:%.c=$(OBJ_DIR)/%.o)
 
 # Regla para compilar el programa principal
-CityDefender: CityDefender.o Cartas.o Tablero.o
-	$(CC) $(CFLAGS) -o main CityDefender.o Cartas.o Tablero.o
+CityDefender: $(OBJ)
+	$(CC) $(CFLAGS) -o Main $(OBJ)
 
-# Regla para compilar CityDefender.o
-CityDefender.o: CityDefender.c Cartas.h Tablero.h
-	$(CC) $(CFLAGS) -c CityDefender.c
-
-# Regla para compilar Cartas.o
-Cartas.o: Cartas.c Cartas.h
-	$(CC) $(CFLAGS) -c Cartas.c
-
-# Regla para compilar Tablero.o
-Tablero.o: Tablero.c Tablero.h
-	$(CC) $(CFLAGS) -c Tablero.c
+# Regla para compilar los archivos .o en el directorio Objetos
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Regla para limpiar archivos compilados
 clean:
-	rm -f *.o CityDefender
+	rm -rf $(OBJ_DIR) Main
+
+.PHONY: clean

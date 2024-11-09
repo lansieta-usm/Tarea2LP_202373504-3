@@ -8,9 +8,15 @@ int main(int argc, char const *argv[]) {
     srand(time(NULL));
 
     int dificultad, limite_turnos, tablero_size, turno_actual = 1, coordX, coordY;
-    printf("------------------------------------------\n");
-    printf("TE DAMOS LA BIENVENIDA A CITY DEFENDER 2.0\n");
-    printf("------------------------------------------\n");
+    printf("-----------------------------------------------------------------------------------\n");
+    printf("¡HOLA PAPULINCE :v! Te damos la bienvenida a:\n");
+    printf("   _______ __        ____       ____               __                  ___    ____ \n");
+    printf("  / ____(_) /___  __/ __ \\___  / __/__  ____  ____/ /__  _____   _   _|__ \\  / __ \\ \n");
+    printf(" / /   / / __/ / / / / / / _ \\/ /_/ _ \\/ __ \\/ __  / _ \\/ ___/  | | / /_/ / / / / / \n");
+    printf("/ /___/ / /_/ /_/ / /_/ /  __/ __/  __/ / / / /_/ /  __/ /      | |/ / __/_/ /_/ /  \n");
+    printf("\\____/_/\\__/\\__, /_____/\\___/_/  \\___/_/ /_/\\__,_/\\___/_/       |___/____(_)____/   \n");
+    printf("           /____/                                                                   \n");
+    printf("-----------------------------------------------------------------------------------\n");
     printf("Selecciona la dificultad:\n");
     printf("1. Fácil -> 11 X 11, 5 Barcos, 30 Trunos.\n");
     printf("2. Medio -> 17 X 17, 7 Barcos, 25 Turnos.\n");
